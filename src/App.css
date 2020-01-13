@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.detail {
+  overflow-y: auto;
+  margin-top: 10px;
+  background: #999;
+  height: 80vh;
+  width: 100%;
+  color: #fff;
+}
+
+@media (max-width: 48em) {
+  .detail {
+    max-height: 50vh;
+  }
+}
