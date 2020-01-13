@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import WeatherLocation from './WeatherLocation';
+import { Paper } from 'material-ui';
+import './styles.css';
 
 const handleWeatherLocationClick = (city, onSelectedLocation) => {
   console.log("handleWeatherLocationClick", city);
@@ -20,9 +22,9 @@ const LocationList = (props) => {
   };
 
   return (
-    <div>
+    <Paper zDepth={2} className="locationList">
       {strToComponents(cities)}
-    </div>
+    </Paper>
   );
 };
 
