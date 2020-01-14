@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Location from "./Location";
 import WeatherData from "./WeatherData";
-import getWeatherData from "../../services/weatherService";
+import { getWeatherData } from "../../services/weatherService";
 import CircularProgress from "material-ui/CircularProgress";
 import "./styles.css";
 
@@ -21,13 +21,9 @@ class WeatherLocation extends React.Component {
     onWeatherLocationClick: PropTypes.func
   };
 
-  handleUpdateClick = async () => {
+  async componentDidMount() {
     const data = await getWeatherData(this.state.city);
     this.setState({ data });
-  };
-
-  componentDidMount() {
-    this.handleUpdateClick();
   }
 
   render() {
