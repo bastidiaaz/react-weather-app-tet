@@ -30,7 +30,6 @@ const getForecastData = async (location) => {
     };
   });
 
-  console.log(data);
   return data;
 };
 

@@ -45,7 +45,7 @@ class App extends React.Component {
               </Col>
               <Col md xs={12}>
                 <Paper zDepth={2}>
-                  <div className="detail d-flex justify-content-center align-items-center">
+                  <div className="detail d-flex justify-content-center">
                     {(selectedCity ? <ForecastExtended city={selectedCity}></ForecastExtended> : <h2>Seleccione una ciudad</h2>)}
                   </div>
                 </Paper>

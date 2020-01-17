@@ -37,7 +37,7 @@ class ForecastExtended extends React.Component {
     const { city } = this.props;
     const { forecastData } = this.state;
     return (
-      <div>
+      <div className="forecastExtended d-flex flex-column align-items-center">
         <Location city={city}></Location>
         {(forecastData ? this.getForecastItemsByRange(forecastData) : <CircularProgress />)}
       </div>

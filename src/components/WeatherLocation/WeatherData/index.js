@@ -7,9 +7,13 @@ import './styles.css';
 const WeatherData = ({ data }) => {
   const { temperature, weatherState, humidity, wind } = data;
   return (
-    <div className='weatherDataCont'>
-      <WeatherTemperature temperature={temperature} weatherState={weatherState}/>
-      <WeatherExtraInfo humidity={humidity} wind={wind}/>
+    <div className='row weatherDataCont d-flex p-0'>
+      <div className="col-sm-6 d-flex justify-content-center">
+        <WeatherTemperature temperature={temperature} weatherState={weatherState}/>
+      </div>
+      <div className="col-sm-6 d-flex justify-content-center">
+        <WeatherExtraInfo humidity={humidity} wind={wind}/>
+      </div>
     </div>
   );
 }

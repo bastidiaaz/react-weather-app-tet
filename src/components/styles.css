@@ -5,6 +5,10 @@
   overflow-y: auto;
 }
 
+.forecastExtended {
+  width: 100%;
+}
+
 @media (max-width: 48em) {
   .locationList {
     max-height: 30vh;

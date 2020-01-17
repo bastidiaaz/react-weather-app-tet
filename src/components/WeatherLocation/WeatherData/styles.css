@@ -1,14 +1,8 @@
 .weatherDataCont {
   width: 100%;
   height: 100px;
-  line-height: 100px;
   display: inline-block;
   border-radius: 3px;
-}
-
-.weatherTemperatureCont {
-  width: 60%;
-  display: inline-block;
 }
 
 .temperature {
@@ -28,16 +22,9 @@
   color: yellow;
 }
 
-.weatherExtraInfoCont {
-  width: 40%;
-  display: inline-block;
-  line-height: 25px;
-  text-align: left;
-}
-
 .extraInfoText {
   display: block;
   color: #000;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
