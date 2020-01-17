@@ -5,7 +5,7 @@ import WeatherData from './../WeatherLocation/WeatherData';
 const ForecastItem = (props) => {
   const {weekDay, hour, data} = props;
   return (
-    <div>
+    <div className="d-flex">
       <div>{weekDay} Hora: {hour}</div>
       <WeatherData data={data}></WeatherData>
     </div>
