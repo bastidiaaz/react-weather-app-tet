@@ -21,7 +21,16 @@ class ForecastExtended extends React.Component {
   async componentDidMount() {
     const { city } = this.props;
     const forecastData = await getForecastData(city);
-    this.setState({ forecastData });
+    this.setState({forecastData});
+  }
+
+  async componentDidUpdate(prevProps, prevState) {
+    const { city } = this.props;
+    if (prevProps.city !== city) {
+      this.setState({forecastData: null});
+      const forecastData = await getForecastData(city);
+      this.setState({forecastData});
+    }
   }
 
   getForecastItemsByRange = (range) => {
