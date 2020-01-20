@@ -1,12 +1,11 @@
 import React from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LocationList from './components/LocationList';
-import ForecastExtended from './components/ForecastExtended';
-import { Container, Row, Col } from 'react-bootstrap';
 import { Paper, AppBar } from 'material-ui';
-import "./App.css";
+import LocationListContainer from './containers/LocationListContainer';
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
 
+import "./App.css";
 
 const cities = [
   "Temuco",
@@ -18,40 +17,26 @@ const cities = [
 ];
 
 class App extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-        selectedCity: null
-      };
-    }
-
-    handleSelectedLocation = (selectedCity) => {
-      this.setState({
-        selectedCity
-      });
-    };
-
     render() {
-      const { selectedCity } = this.state;
       return (
         <MuiThemeProvider>
-          <Container>
-            <Row>
-              <Col md sm><AppBar title="Weather App"></AppBar></Col>
-            </Row>
-            <Row>
-              <Col md xs={12}>
-                <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}/>
-              </Col>
-              <Col md xs={12}>
+          <div className="container">
+            <div className="row">
+              <div className="col-md col-sm"><AppBar title="Weather App"></AppBar></div>
+            </div>
+            <div className="row">
+              <div className="col-md col-xs-12">
+                <LocationListContainer cities={cities}/>
+              </div>
+              <div className="col-md col-xs-12">
                 <Paper zDepth={2}>
                   <div className="detail d-flex justify-content-center">
-                    {(selectedCity ? <ForecastExtended city={selectedCity}></ForecastExtended> : <h2>Seleccione una ciudad</h2>)}
+                    <ForecastExtendedContainer></ForecastExtendedContainer>
                   </div>
                 </Paper>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </MuiThemeProvider>
       );
     }
